@@ -1,0 +1,101 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "School": {
+      "type": "object",
+      "properties": {
+
+        "id": {
+          "type": "string"
+        },
+
+        "name": {
+          "type": "string"
+        },
+
+        "basic_info": {
+          "type": "object",
+          "properties": {
+            "country": {
+              "type": "string"
+            },
+            "location": {
+              "type": "object",
+              "properties": {
+                "latitude": {
+                  "type": "number",
+                  "minimum": -90,
+                  "maximum": 90
+                },
+                "longitude": {
+                  "type": "number",
+                  "minimum": -180,
+                  "maximum": 180
+                }
+              }
+            },
+            "classfication": {
+              "type": "string"
+            },
+            "numberOfStudents": {
+              "type": "integer"
+            },
+            "numberOfTeachers": {
+              "type": "integer"
+            },
+            "phone": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string",
+              "format": "email"
+            },
+            "photos": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+
+        "connectivity": {
+          "type": "object",
+          "properties": {
+            "connected": {
+              "type": "boolean"
+            },
+            "connectionType": {
+              "type": "string"
+            },
+            "lastPing": {
+              "type": "number"
+            }
+          }
+        },
+
+        "socialMedia": {
+          "type": "object",
+          "properties": {
+            "website": {
+              "type": "string"
+            },
+            "twitter": {
+              "type": "string"
+            },
+            "wikipedia": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": true
+        },
+
+        "custom": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      },
+      "required": ["id", "name"]
+    }
+  }
+}
